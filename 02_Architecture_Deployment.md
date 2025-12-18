@@ -24,11 +24,12 @@ The four virtual machines and their specific roles were configured as follows:
 * **Function:** Served as the Active Directory Domain Controller and the primary DNS resolver. The user `b.shark` was created here for testing.
 
 ![AD Installation](assets/ADDC-installation.jpg)
-Installed Active Directory and promoted it to a Domain COntroller (DC)
-<br>
+Installed Active Directory and promoted it to a `Domain COntroller` (DC)
+<br><br>
 
 ![AD Users](assets/ADDC-users.jpg)
 Created Users in `mydomain`
+<br><br>
 
 ### B. Target-PC
 * **OS:** Windows 10
@@ -44,7 +45,7 @@ Added the Target-PC to `mydomain`
 <br><br>
 
 ![Enable RDP](assets/Target-pc-to-rdp.jpg)
-Enabled RDP on the Target-PC
+Enabled `RDP` on the Target-PC
 <br><br>
 
 ### C. Attacker Platform
@@ -60,19 +61,19 @@ Enabled RDP on the Target-PC
 * **Function:** It was the destination for all security telemetry logs, acting as the centralized monitoring system.
 ![Splunk Set up 1](assets/Splunk-set-up-1.jpg)
 Configured the splunk server to match the network information.
-<br>
+<br><br>
 
 ![Splunk Set up 2](assets/Splunk-set-up-2.jpg)
 Confirmation of splunk server settings.
-<br>
+<br><br>
 
 ![Splunk Set up 3](assets/splunk-set-up-3.jpg)
-Successfully created an index on the splunk indexer to receive logs from the machines.
-<br>
+Successfully created an `endpoint` index on the splunk indexer to receive logs from the machines.
+<br><br>
 
 ![Splunk set up 4](assets/splunk-set-up-4.jpg)
 Configured the splunk receiving port as `9997`(default)
-<br>
+<br><br>
 
 ## 2.3 Splunk Universal Forwarder and Sysmon Configuration
 
@@ -84,12 +85,14 @@ Installed Universal Splunk forwarder on both the Target-PC and Domain Controller
 <br><br>
 
 ![Forwarder Configuration](assets/splunk-forwarder-config.jpg)
-The splunk forwarder was configured to send logs to the `endpoint` index on the Splunk server.
-  
+The splunk forwarder was configured to send logs to the `endpoint` index on the Splunk server. This file was saved as `input.conf` located in `C:\Program Files\SplunkUniversalForwarder\etc\system\default`. 
+<br><br>
+
 ![Sysmon Installation](assets/ADDC-sysmon-installation.jpg)
 Installed Sysmon on both the Target-PC and the Domain Controller
 
 NOTE - It was essentially the same process on both machines, hence the single snapshots.
+<br><br>
 
 ![Splunk and Sysmon Installation Configuration](assets/splunk-sysmon-pc-dc-config.jpg)
-After setting up the Splunk forwarder and Sysmon on both the Target-PC and Domain Controller, logs were collected in the Indexer confirming the set-up works.
+After setting up the Splunk forwarder and Sysmon on both the Target-PC and Domain Controller, telemetry from both machines were collected in the Indexer confirming the set-up works.
