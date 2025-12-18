@@ -9,14 +9,14 @@ Validation was achieved by performing a simulated Remote Desktop Protocol (RDP) 
 
 The project successfully met the following technical objectives:
 
-### Deployment and Connectivity Objectives
-* **Active Directory Deployment:** Successfully set up a Windows machine as the Active Directory Target, configured for Remote Desktop access.
-* **Cross-Platform Integration:** Established reliable network connectivity between the Windows Target, the Kali Linux Attacker, and the Splunk Indexer.
+### Deployment and Connectivity
+* **Active Directory Deployment:** Successfully set up a Windows machine as the Target, configured for Remote Desktop access.
+* **Cross-Platform Integration:** Established reliable network connectivity between the Windows Target, the Domain Controller, the Kali Linux Attacker, and the Splunk Indexer.
 
-### 🔑 Validation and Security Objectives
+### Validation and Security
 * **Attack Validation:** Executed a successful RDP brute-force attack using **Hydra** to confirm the target's reachability and service response.
 * **Detection Validation:** Configured the **Splunk Universal Forwarder** on the target and verified the ingestion of security logs (`EventCode=4625`) into the SIEM.
 
-### 🛠️ Troubleshooting and Configuration Objectives
+### Troubleshooting
 * **System Integrity:** Resolved critical Active Directory and DNS misconfigurations that interfered with user authorization.
 * **SIEM Health:** Tuned the Splunk data pipeline to resolve ingestion latency issues, ensuring real-time security visibility.
