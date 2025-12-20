@@ -57,5 +57,5 @@ The appearance of these logs in the Splunk Search Head confirmed that the Data P
 
 ![Splunk Indexer Breach Logs](assets/Splunk-logon-logs.jpg)
 
-Within the Splunk SIEM, 26 instances of Windows Security `Event ID 4625` were observed, corresponding to failed authentication attempts generated during the brute-force phase of this experiment. 
+In Splunk, 26 instances of Windows Security `Event ID 4625` were observed, corresponding to failed authentication attempts generated during the experiment. 
 These events confirm repeated invalid credential submissions prior to `successful account compromise`.
